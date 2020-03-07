@@ -3,6 +3,7 @@
 	<head>
 		<title>{{t}}</title>
 		<!-- href="/static/assets/style.css"-->
+		<script src="{{ url_for('static',filename='twemoji.min.js')}}"></script> 
 		<link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='style.css')}}" >
 		<style type="text/css">
 			footer{
@@ -96,45 +97,11 @@
 {% endif %}
 
 </hr>
-<form action="/action" method="POST">
-	<table class="none">
-		<tr class="row success">
-			<td>
-				<h2>Add a Goal</h2>
-			</td>
-		</tr>
-		<tr class="row">
-			<td class="col-2">
-				<input type="text" name="name" placeholder="Goalname" />
-			</td>
-		</tr>
-		<tr class="row">
-			<td class="col-4">
-				<textarea name="description" rows="2" cols="30" placeholder="Enter Description here..." required></textarea>
-			</td>
-		</tr>
-		<tr class="row">
-			<td class="col-2">
-				<input type="date" name="date" placeholder="Date" />
-			</td>
-		</tr>
-		<tr class="row">
-			<td class="col-2">
-				<select name="pr">
-					<option selected disabled>Priority</option>
-					<option>Low !</option>
-					<option>Medium </option>
-					<option>High </option>
-				</select>
-			</td>
-		</tr>
-		<tr class="row">
-			<td class="col-2">
-				<button type="submit"> Create </button>
-			</td>
-		</tr>
-	</form>
-	</table>
+	<h2><a href="/add">Add a Goal</a></h2>
+
+	<script>
+
+	</script>
 	
 
 	<footer><center>KKC Production 2020 </center>
@@ -143,4 +110,5 @@
 </html>
 
 
-</body>
+
+

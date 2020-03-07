@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<title>{{t}}</title>
+		<!-- href="/static/assets/style.css"-->
+		<script src="{{ url_for('static',filename='twemoji.min.js')}}"></script> 
+		<link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='style.css')}}" >
+		<style type="text/css">
+			footer{
+				position: absolute;
+				bottom:0;
+				width:100%;
+   				height:30px;  
+   				background:orange;
+  				color:white;
+			}
+			body{
+				width:100%;
+			}
+
+			ul{
+				list-style-type:none;
+				margin: 0;
+				padding:0;
+				overflow:hidden;
+				background-color: black;
+			}
+		</style>
+
+	</head>
+<body>
+<div align="center"> <h1>{{h}}</h1></div>
+	<ul>
+		<li><a href="/list" class="{{ a1 }}">Bucket List</a></li>
+		<li><a href="/" class="{{ a2 }}">Aspirations</a></li>
+		<li><a href="/completed" class="{{ a3 }}">Achievements</a></li>
+		<li style="float:right"><a href="/about">About</a></li>
+	</ul>
+
+<br>
+<br>
+
+<form action="/action" method="POST">
+	<table class="none">
+		<tr class="row success">
+			<td>
+				<h2>Add a Goal</h2>
+			</td>
+		</tr>
+		<tr class="row">
+			<td class="col-2">
+				<input type="text" name="name" placeholder="Goalname" />
+			</td>
+		</tr>
+		<tr class="row">
+			<td class="col-4">
+				<textarea name="description" rows="2" cols="30" placeholder="Enter Description here..." required></textarea>
+			</td>
+		</tr>
+		<tr class="row">
+			<td class="col-2">
+				<input type="date" name="date" placeholder="Date" />
+			</td>
+		</tr>
+		<tr class="row">
+			<td class="col-2">
+				<select name="pr">
+					<option selected disabled>Priority</option>
+					<option>Low </option>
+					<option>Medium </option>
+					<option>High </option>
+				</select>
+			</td>
+		</tr>
+		<tr class="row">
+			<td class="col-2">
+				<button type="submit"> Create </button>
+			</td>
+		</tr>
+	</form>
+	</table>
+	</form>
+
+
+
+
+
+	<footer><center>KKC Production 2020 </center>
+
+</body>
+</html>
+
+
