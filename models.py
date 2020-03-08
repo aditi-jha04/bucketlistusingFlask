@@ -1,0 +1,1 @@
+SOCIAL_AUTH_USER_MODEL = 'foobar.models.User'
