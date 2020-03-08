@@ -2,6 +2,36 @@
 	<head>
 		<title>{{t}}</title>
 		<link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='style.css')}}" >
+		<style type="text/css">
+			footer{
+				position: absolute;
+				bottom:0;
+				width:100%;
+   				height:30px;  
+   				background:orange;
+  				color:black;
+			}
+			body{
+				color:black;
+				
+				background: #FDD761;
+  				font-family: 'Lucida Sans Unicode', 'Arial', serif;
+ 				color: white;
+				background-image: url('static/images/bkground.jpg');
+			}
+			a {
+  				text-align: center;
+  				outline: none;
+  				display: inline-block;
+  				text-decoration: none;
+
+  				font-size: 14px;
+  				color: yellow;
+  	
+          		
+			}
+		</style>
+
 	</head>
 <body>
 	<h1>{{h}}</h1>
@@ -24,7 +54,7 @@
 			
 			<td class="name">{{ blist["name"] }}</td>
 			<td class="description">{{ blist["description"] }}</td>
-			<td class="date">{{ blist["date"] }}</td>
+			<td class="date">{{ blist["date"]}}</td>
 			<td class="pr">{{ blist["pr"] }}</td>
 			<td class="func1"><a href="./remove?_id={{ blist['_id'] }}"><button type="submit">DELETE</button></a></td>
 			<td class="func1"><a href="./update?_id={{ blist['_id'] }}"><button type="submit">EDIT</button></a></td>
@@ -36,5 +66,7 @@
 	{% endif %}
 	</table>
 	<a href="/">Return to BucketList</a>
+
+	<footer><center>KKC Production 2020 &copy; </center>
 </body>
 </html>

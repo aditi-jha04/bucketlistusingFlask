@@ -1,9 +1,51 @@
 <html>
 	<head>
 		<title>{{t}}</title>
-		<style>
-			body {
-				background-color:white;
+		<link rel="stylesheet" type="text/css"  href="static/style.css">
+		<style type="text/css">
+			footer{
+				position: absolute;
+				bottom:0;
+				width:100%;
+   				height:30px;  
+   				background:orange;
+  				color:white;
+			}
+
+		h1{
+			font-family:"Arial Black", Gadget, sans-serif;
+		}
+		
+		
+		body{
+				color:black;
+				
+				background: #FDD761;
+  				font-family: 'Lucida Sans Unicode', 'Arial', serif;
+ 				color: white;
+				background-image: url('static/images/bkground.jpg');
+			}
+		a {
+  				text-align: center;
+  				outline: none;
+  				display: inline-block;
+  				text-decoration: none;
+
+  				font-size: 14px;
+  				color: yellow;
+  	
+          		
+		}
+		h1, h3, h4, header .btn {
+  			font-weight: 700;
+			}
+
+			ul{
+				list-style-type:none;
+				margin: 0;
+				padding:0;
+				overflow:hidden;
+				background-color: black;
 			}
 			.credits {
 				margin:10px;
@@ -13,13 +55,24 @@
 		
 	</head>
 <body>
+	<div align="center"> <h1>{{h}}</h1></div>
+	<ul>
+		<li><a href="/list" class="{{ a1 }}">Bucket List</a></li>
+		<li><a href="/" class="{{ a2 }}">Aspirations</a></li>
+		<li><a href="/completed" class="{{ a3 }}">Achievements</a></li>
+		<li style="float:right"><a href="/about" class="{{ a4 }}" >About</a></li>
+	</ul>
 	<a href="/"><h1>{{ h }}</h1></a>
-	<hr>
 	<h3>Creator :</h3>
+	<hr>
+	
 	<div class='credits'>
 		Kaustuv K Chattopadhyay		
 	</div>
 	<hr>
-	<p>Made with Love, from NIT Durgapur</p>
+	<br>
+	<br>
+	<p>Made with Love, from GLUG-NIT Durgapur</p>
+	<footer><center>KKC Production 2020 &copy; </center></footer>
 </body>
 </html>

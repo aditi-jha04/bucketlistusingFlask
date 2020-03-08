@@ -9,6 +9,35 @@
 		body{
 			background-color:white;
 		}
+
+		footer{
+				position: absolute;
+				bottom:0;
+				width:100%;
+   				height:30px;  
+   				background:orange;
+  				color:black;
+			}
+		body{
+				color:black;
+				
+				background: #FDD761;
+  				font-family: 'Lucida Sans Unicode', 'Arial', serif;
+ 				color: white;
+				background-image: url('static/images/bkground.jpg');
+			}
+		a {
+  				text-align: center;
+  				outline: none;
+  				display: inline-block;
+  				text-decoration: none;
+
+  				font-size: 14px;
+  				color: yellow;
+  	
+          		
+		}
+		
 	</style>
 
 <body>
@@ -17,13 +46,13 @@
 	<h3>Update goals with a reference</h3>
 	<form action="/action3" method="POST">
 	{% for goal in goals %}
-		Unique Object ID : {{ goal['_id'] }}<br/>
+		
 	<input type="text" name="_id" value="{{ goal['_id'] }}" hidden>
 
 
 	<table>
 	<tr>
-	<td>Task Name</td><td> : </td><td><input type="text" name="name" value="{{ goal['name'] }}" placeholder="{{ goal['name'] }}"></td>
+	<td>Goal Name</td><td> : </td><td><input type="text" name="name" value="{{ goal['name'] }}" placeholder="{{ goal['name'] }}"></td>
 	</tr>
 	<tr>
 	<td>Description</td><td> : </td><td><textarea type="text" name="description" rows=3 cols=30 placeholder="{{ goal['description'] }}"> {{ goal['description'] }} </textarea></td>
@@ -40,5 +69,7 @@
 		<br/>
 	</form>
 	<a href="/">Return to Bucketlist</a>
+	<footer><center>KKC Production 2020 &copy; </center>
+
 </body>
 </html>

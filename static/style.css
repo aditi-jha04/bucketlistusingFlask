@@ -11,7 +11,7 @@ table{
 td
 {
 	border: rgba(224, 119, 70, 1) 1px solid;
-	word-wrap:break-word;
+	word-wrap:normal;
 }
 
 		body{
@@ -20,7 +20,7 @@ td
 				background: #FDD761;
   				font-family: 'Lucida Sans Unicode', 'Arial', serif;
  				color: white;
-				background-image: url('bkground.jpg');
+				
 			}
 			a {
   text-align: center;
@@ -30,10 +30,7 @@ td
   background: #fcca2f;
   font-size: 14px;
   color: steelblue;
-  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
-  -webkit-transition: all ease .3s;
-          transition: all ease .3s;
-}
+ 
 
 
 table#close{

@@ -25,16 +25,15 @@
 				background-image: url('static/images/bkground.jpg');
 			}
 			a {
-  text-align: center;
-  outline: none;
-  display: inline-block;
-  text-decoration: none;
-  background: #fcca2f;
-  font-size: 14px;
-  color: steelblue;
-  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
-  -webkit-transition: all ease .3s;
-          transition: all ease .3s;
+  				text-align: center;
+  				outline: none;
+  				display: inline-block;
+  				text-decoration: none;
+
+  				font-size: 14px;
+  				color: yellow;
+  	
+          		
 }
 
 			h1, h3, h4, header .btn {
@@ -65,7 +64,7 @@
 		<li><a href="/list" class="{{ a1 }}">Bucket List</a></li>
 		<li><a href="/" class="{{ a2 }}">Aspirations</a></li>
 		<li><a href="/completed" class="{{ a3 }}">Achievements</a></li>
-		<li style="float:right"><a href="/about">About</a></li>
+		<li style="float:right"><a href="/about" class="{{ a4 }}">About</a></li>
 	</ul>
 	{% if error %}
 		<div class="alert alert-danger">
@@ -88,7 +87,7 @@
 				<option value="date">Date</option>
 				<option value="pr">Priority</option>
 				</select></td>
-				<td><input type="text" name="key" placeholder="Search Task" size="15" /></td>
+				<td><input type="text" name="key" placeholder="Search Goal" size="15" /></td>
 				<td><button type="submit">Search</button></td>
 			</tr>
 		</table>
@@ -118,8 +117,8 @@
 			<td class="description">{{ blist["description"] }}</td>
 			<td class="date">{{ blist["date"] }}</td>
 			<td class="pr">{{ blist["pr"] }}</td>
-			<td class="func1"><a href="./remove?_id={{ blist['_id'] }}">Remove</a></td>
-			<td class="func2"><a href="./update?_id={{ blist['_id'] }}">Modify</a></td>
+			<td class="func1"><button type="submit"><a href="./remove?_id={{ blist['_id'] }}">Remove</a></button></td>
+			<td class="func2"><button type="submit"><a href="./update?_id={{ blist['_id'] }}">Modify</a></button></td>
 			<td><a href="./done?_id={{ blist['_id'] }}"><input type="image" src="static/images/{{blist['done']}}.png" alt="Submit ME"></a></td> 
 		</tr>
 	{% endfor %}
@@ -138,9 +137,7 @@
 </hr>
 	<h2><a href="/add">Add a Goal</a></h2>
 
-	<script>
-
-	</script>
+	
 	
 
 	<footer><center>KKC Production 2020 &copy; </center>

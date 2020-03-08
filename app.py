@@ -117,7 +117,8 @@ def search():
 
 @app.route("/about")
 def about():
-	return render_template('credits.html',t=title,h=heading)
+	a4="active"
+	return render_template('credits.html',a4=a4,t=title,h=heading)
 
 if __name__ == "__main__":
 	env = os.environ.get('APP_ENV', 'development')
