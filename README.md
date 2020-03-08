@@ -1,12 +1,5 @@
-# WinterProject2019
-BucketlistUsingFlask
-
-
-To run:
-
-
-
 Project Title
+BucketListApp
 
 It is a simple bucketlist app. It features addition, deletion, modification and deletion of goals. Further the app also features a search bar.
 
