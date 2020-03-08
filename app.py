@@ -67,10 +67,10 @@ def add():
 def action ():
 	#Adding a goal
 	name=request.values.get("name")
-	desc=request.values.get("desc")
+	description=request.values.get("description")
 	date=request.values.get("date")
 	pr=request.values.get("pr")
-	blists.insert({ "name":name, "desc":desc, "date":date, "pr":pr, "done":"no"})
+	blists.insert({ "name":name, "description":description, "date":date, "pr":pr, "done":"no"})
 	return redirect("/list")
 
 @app.route("/remove")
@@ -78,7 +78,7 @@ def remove ():
 	#Deleting a goal with various references
 	key=request.values.get("_id")
 	blists.remove({"_id":ObjectId(key)})
-	return redirect("/")
+	return redirect("/list")
 
 @app.route("/update")
 def update ():
@@ -90,11 +90,11 @@ def update ():
 def action3 ():
 	#Updating a goal with various references
 	name=request.values.get("name")
-	desc=request.values.get("desc")
+	description=request.values.get("description")
 	date=request.values.get("date")
 	pr=request.values.get("pr")
 	id=request.values.get("_id")
-	blists.update({"_id":ObjectId(id)}, {'$set':{ "name":name, "desc":desc, "date":date, "pr":pr }})
+	blists.update({"_id":ObjectId(id)}, {'$set':{ "name":name, "description":description, "date":date, "pr":pr }})
 	return redirect("/")
 
 @app.route("/search", methods=['GET'])

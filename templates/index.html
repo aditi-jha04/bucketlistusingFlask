@@ -2,9 +2,11 @@
 <html>
 	<head>
 		<title>{{t}}</title>
-		<!-- href="/static/assets/style.css"-->
-		<script src="{{ url_for('static',filename='twemoji.min.js')}}"></script> 
-		<link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='style.css')}}" >
+		<meta charset="utf-8">
+   		 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" type="text/css"  href="static/style.css">
 		<style type="text/css">
 			footer{
 				position: absolute;
@@ -12,10 +14,31 @@
 				width:100%;
    				height:30px;  
    				background:orange;
-  				color:white;
+  				color:black;
 			}
 			body{
-				width:100%;
+				color:black;
+				
+				background: #FDD761;
+  				font-family: 'Lucida Sans Unicode', 'Arial', serif;
+ 				color: white;
+				background-image: url('static/images/bkground.jpg');
+			}
+			a {
+  text-align: center;
+  outline: none;
+  display: inline-block;
+  text-decoration: none;
+  background: #fcca2f;
+  font-size: 14px;
+  color: steelblue;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+  -webkit-transition: all ease .3s;
+          transition: all ease .3s;
+}
+
+			h1, h3, h4, header .btn {
+  			font-weight: 700;
 			}
 
 			ul{
@@ -25,6 +48,14 @@
 				overflow:hidden;
 				background-color: black;
 			}
+			table{
+
+			width:100%;
+			border-collapse:collapse;
+			table-layout:fixed;
+			align-content: center;
+			}
+			
 		</style>
 
 	</head>
@@ -44,7 +75,7 @@
 	{% endif %}
 	<hr>
 	{% if blists[0] %}
-	<div span="right">
+	<div span="right" >
 		<form action="/search" method="GET" >
 			<table class = "none" id="close">
 			<tr>
@@ -64,6 +95,10 @@
 		</form>
 	</div>
 	<b><big>Bucket List :</big></b>
+
+	<div class="row">
+		
+	
 	<table>
 	    <tr id="row">
 	    	
@@ -75,6 +110,7 @@
 		<th class="func2">Modify</th>
 			<th class="status">Status</th>
 	    </tr>
+
 	    {% for blist in blists %}
 	    	<tr class="datas">
 
@@ -88,6 +124,9 @@
 		</tr>
 	{% endfor %}
 </table>
+
+
+
 {% else %}
 	<div class="danger">
 		<h4>No Lists In The Bucket!</h4>
@@ -104,7 +143,7 @@
 	</script>
 	
 
-	<footer><center>KKC Production 2020 </center>
+	<footer><center>KKC Production 2020 &copy; </center>
 
 </body>
 </html>

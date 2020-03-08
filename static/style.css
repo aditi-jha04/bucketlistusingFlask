@@ -1,15 +1,10 @@
 h1{
-/*	font-family:"Arial Black", Gadget, sans-serif;*/
-	font-family:"Times New Romans", Gadget, sans-serif;
+
+	font-family:"Arial Black", Gadget, sans-serif;
 }
-body{
-	color:black;
-	background-color:white;
-	left-margin:10px;
-	right-margin:10px;
-}
+
 table{
-	width:95%;
+	width:70%;
 	border-collapse:collapse;
 	table-layout:fixed;
 }
@@ -17,6 +12,27 @@ td
 {
 	border: rgba(224, 119, 70, 1) 1px solid;
 	word-wrap:break-word;
+}
+
+		body{
+				color:black;
+				
+				background: #FDD761;
+  				font-family: 'Lucida Sans Unicode', 'Arial', serif;
+ 				color: white;
+				background-image: url('bkground.jpg');
+			}
+			a {
+  text-align: center;
+  outline: none;
+  display: inline-block;
+  text-decoration: none;
+  background: #fcca2f;
+  font-size: 14px;
+  color: steelblue;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+  -webkit-transition: all ease .3s;
+          transition: all ease .3s;
 }
 
 
