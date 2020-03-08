@@ -3,6 +3,8 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId 
 from bson.errors import InvalidId 
 import os
+from flask_dance.contrib.github import make_github_blueprint, github
+from flask_dance.contrib.twitter import make_twitter_blueprint, twitter 
 
 mongodb_host = os.environ.get('MONGO_HOST', 'localhost')
 mongodb_port = int(os.environ.get('MONGO_PORT', '27017'))
@@ -11,8 +13,32 @@ db = client.bucketlist
 blists = db.blist
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'thisissupposedtobeasecret'
 title = "BucketList with Flask"
 heading = "My Bucket List"
+
+twitter_blueprint = make_twitter_blueprint(api_key='GdWX0iNjKtvQJDFAwJZsc6IqT', api_secret='cVsNzKIc7QiCDIbJAS3NE3tJDrsdAzbjrRAbVH0gZiDPzXLm0l')
+
+github_blueprint = make_github_blueprint(client_id='790c691f198429411955', client_secret='3031591ff5ef6b9feae268ddcce6bf3dda016a8f')
+
+app.register_blueprint(twitter_blueprint, url_prefix='/twitter_login')
+
+app.register_blueprint(github_blueprint, url_prefix='/github_login')
+
+
+@app.route('/twitter')
+def twitter_login():
+	if not twitter.authorized:
+		return redirect(url_for('twitter.login'))
+	account_info=twitter.get('account/settings.json')
+
+	if account_info.ok:
+		account_info_json = account_info.json()
+
+		return '<h1> Your Twitter Name is @{}'.format(account_info_json['screen_name'])
+
+	return '<h1>Request Failed!</h1>'
+
 
 
 def redirect_url():
